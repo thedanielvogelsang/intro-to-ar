@@ -1,0 +1,11 @@
+<p><a href="/horses">Back to Horse Index</a></p>
+
+<h3 style="color: red"><%= @horse.name.upcase %></h3>
+<h5>More about <%= @horse.name %></h5>
+<p><%= @horse.name%> is a <%= @horse.breed.name %></br>She is <%= @horse.age %> years old.</br>Thus far she has earned $<%= @horse.total_winnings %>.<br/></br>
+  <% if @horse.total_winnings > 10000 %>
+        Wow <%= @horse.name %>!
+  <% else %>
+        Yikes!
+  <% end %>
+</p>

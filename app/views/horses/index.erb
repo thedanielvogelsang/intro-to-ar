@@ -1,0 +1,20 @@
+<h1>My Horses</h1>
+
+<h4><a href="/horses/new">Create New Horse</a></h4>
+
+<% @horses.each do |horse| %>
+<h3><a href="/horses/<%= horse.id %>" style="color: red"><%= horse.name.upcase %></a></h3>
+<h5>More about <%= horse.name %></h5>
+<p><%= horse.name%> is a <%= horse.breed.name %></br>She is <%= horse.age %> years old.</br>Thus far she has earned $<%= horse.total_winnings %>.</br></br>
+  <% if horse.total_winnings > 10000 %>
+        Wow <%= horse.name %>!
+  <% else %>
+        Yikes!
+  <% end %>
+      </p>
+<h4><a href="/horses/<%= horse.id %>/edit">Edit</a></h4>
+<form action="/horses/<%= horse.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE"/>
+  <input type="submit" value="delete">
+</form>
+<% end %>

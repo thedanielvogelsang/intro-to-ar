@@ -1,0 +1,8 @@
+<form action="/horses/<%= @horse.id %>" method="POST">
+  <p>Edit</p>
+  <input type="hidden" name="_method" value="PUT" />
+  <input type="text" name="horse[name]" value="<%= @horse.name %>"/><br/>
+  <input type="text" name="horse[age]" value="<%= @horse.age %>"/><br/>
+  <input type="text" name="horse[total_winnings]" value="<%= @horse.total_winnings %>" /><br/>
+  <input type="submit"/>
+</form>

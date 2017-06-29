@@ -1,0 +1,15 @@
+<!-- <p><a href="/horses">Back to Horse Index</a></p> -->
+
+<h3 style="color: black; text-decoration: underline; text-shadow: -1px 1px red"><%= @jockey.name.upcase %></h3>
+
+<h4 style="color: green; text-decoration: underline"><%= @jockey.name %>'s Horses</h4>
+<ul>
+<% @jockey.horses.each do |horse| %>
+  <li><h4><%= horse.name %></h4></li>
+<% end %>
+</ul>
+<hr/>
+<h4 style="color: green">Total Winnings</h4>
+<p>$<%= @total_winnings %></p>
+<h4 style="color: red">Average Winnings</h4>
+<p>$<%= @total_winnings/@jockey.horses.count %></p>
